@@ -27,7 +27,7 @@
                           
 ;------------------CONFIGURACION-----------
 INICIO:   BSF     STATUS,RP0
-          MOVLW   b'011100000'
+          MOVLW   0FFH
           MOVWF   TRISB
           CLRF    TRISA
           BCF     STATUS,RP0
@@ -39,7 +39,7 @@ INICIO:   BSF     STATUS,RP0
           MOVLW   .4
           MOVWF   contador
 
-          MOVLW   b'01110000' ;ADELANTE
+          MOVLW   b'00100000' ;ADELANTE
           MOVWF   aux5
 
           MOVLW   b'01100000' ;DERECHA
