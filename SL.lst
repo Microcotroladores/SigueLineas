@@ -1,4 +1,4 @@
-MPASM  5.35beta                            SL.ASM   5-10-2014  23:46:31         PAGE  1
+MPASM  5.35beta                            SL.ASM   5-11-2014  4:44:41         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -36,7 +36,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00027                           
                       00028 ;------------------CONFIGURACION-----------
 0000   1683           00029 INICIO:   BSF     STATUS,RP0
-0001   30E0           00030           MOVLW   b'11100000'
+0001   3070           00030           MOVLW   b'01110000'
 Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
 0002   0086           00031           MOVWF   TRISB
 Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
@@ -50,14 +50,14 @@ Message[302]: Register in operand not in bank 0.  Ensure that bank bits are corr
 0007   3004           00039           MOVLW   .4
 0008   009B           00040           MOVWF   contador
                       00041 
-0009   3040           00042           MOVLW   b'01000000' ;ADELANTE
+0009   3020           00042           MOVLW   b'00100000' ;ADELANTE
 000A   0090           00043           MOVWF   aux5
                       00044 
-000B   3020           00045           MOVLW   b'00100000' ;DERECHA
+000B   3010           00045           MOVLW   b'00010000' ;DERECHA
 000C   0091           00046           MOVWF   aux6
                       00047 
-000D   3060           00048           MOVLW   b'01100000' ;DERECHA
-MPASM  5.35beta                            SL.ASM   5-10-2014  23:46:31         PAGE  2
+000D   3030           00048           MOVLW   b'00110000' ;DERECHA
+MPASM  5.35beta                            SL.ASM   5-11-2014  4:44:41         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -68,18 +68,18 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 000F   3000           00051           MOVLW   b'00000000' ;ATRAS
 0010   0093           00052           MOVWF   aux8
                       00053 
-0011   3080           00054           MOVLW   b'10000000' ;IZQ
+0011   3040           00054           MOVLW   b'01000000' ;IZQ
 0012   0094           00055           MOVWF   aux9
                       00056 
-0013   30C0           00057           MOVLW   b'11000000' ;IZQ
+0013   3060           00057           MOVLW   b'01100000' ;IZQ
 0014   0095           00058           MOVWF   aux10
                       00059 
                       00060 ;       ==CASOS ESPECIALES==
                       00061 
-0015   30A0           00062           MOVLW   b'10100000' ;DER
+0015   3050           00062           MOVLW   b'01010000' ;DER
 0016   0096           00063           MOVWF   aux11
                       00064 
-0017   30E0           00065           MOVLW   b'11100000' ;IZQ
+0017   3070           00065           MOVLW   b'01110000' ;IZQ
 0018   0097           00066           MOVWF   aux12
                       00067 
                       00068 ;----------------INICIO DE DECISIONES------------
@@ -116,7 +116,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00099 
 0031   0806           00100           MOVF    PORTB,0
 0032   0616           00101           XORWF   aux11,0
-MPASM  5.35beta                            SL.ASM   5-10-2014  23:46:31         PAGE  3
+MPASM  5.35beta                            SL.ASM   5-11-2014  4:44:41         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -175,7 +175,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00152 
                       00153 ;------------DELAY 2-----------------------------------------
                       00154 
-MPASM  5.35beta                            SL.ASM   5-10-2014  23:46:31         PAGE  4
+MPASM  5.35beta                            SL.ASM   5-11-2014  4:44:41         PAGE  4
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -197,7 +197,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00168 ;---------------FIN----------------
                       00169 
 3FF1                  00170             END
-MPASM  5.35beta                            SL.ASM   5-10-2014  23:46:31         PAGE  5
+MPASM  5.35beta                            SL.ASM   5-11-2014  4:44:41         PAGE  5
 
 
 SYMBOL TABLE
@@ -256,7 +256,7 @@ TRISB                             00000086
 W                                 00000000
 WR                                00000001
 WREN                              00000002
-MPASM  5.35beta                            SL.ASM   5-10-2014  23:46:31         PAGE  6
+MPASM  5.35beta                            SL.ASM   5-11-2014  4:44:41         PAGE  6
 
 
 SYMBOL TABLE
