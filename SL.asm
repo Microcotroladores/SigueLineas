@@ -27,7 +27,11 @@
                           
 ;------------------CONFIGURACION-----------
 INICIO:   BSF     STATUS,RP0
+<<<<<<< HEAD
           MOVLW   b'11100000'
+=======
+          MOVLW   0FFH
+>>>>>>> 5a9e6be3a65b6dabf4faf67463385ca91f0ec1ef
           MOVWF   TRISB
           CLRF    TRISA
           BCF     STATUS,RP0
@@ -39,7 +43,11 @@ INICIO:   BSF     STATUS,RP0
           MOVLW   .4
           MOVWF   contador
 
+<<<<<<< HEAD
           MOVLW   b'10000000' ;ADELANTE
+=======
+          MOVLW   b'00100000' ;ADELANTE
+>>>>>>> 5a9e6be3a65b6dabf4faf67463385ca91f0ec1ef
           MOVWF   aux5
 
           MOVLW   b'00100000' ;DERECHA
