@@ -1,0 +1,60 @@
+MPLINK 4.35, Linker
+Linker Map File - Created Sat May 10 22:47:53 2014
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x0000ce
+                   .cinit    romdata   0x000067    program   0x000004
+        .config_2007_SL.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000068      
+                            0x002007    0x002007      
+            106 out of 1093 program addresses used, program memory utilization is 9%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                 ADELANTE   0x000048    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                    ATRAS   0x00004b    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                    CICLO   0x000019    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                  DERECHA   0x00003a    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                   INICIO   0x000000    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                IZQUIERDA   0x000041    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                    PAUSA   0x00004e    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                   PAUSA2   0x00005b    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+             _.org_0_0055   0x000055    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+             _.org_0_0057   0x000057    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+             _.org_0_0059   0x000059    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+             _.org_0_0061   0x000061    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+             _.org_0_0063   0x000063    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+             _.org_0_0065   0x000065    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   INICIO   0x000000    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                    CICLO   0x000019    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                  DERECHA   0x00003a    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                IZQUIERDA   0x000041    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                 ADELANTE   0x000048    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                    ATRAS   0x00004b    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                    PAUSA   0x00004e    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+             _.org_0_0055   0x000055    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+             _.org_0_0057   0x000057    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+             _.org_0_0059   0x000059    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+                   PAUSA2   0x00005b    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+             _.org_0_0061   0x000061    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+             _.org_0_0063   0x000063    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+             _.org_0_0065   0x000065    program     static C:\Users\PraxedisAugusto\Documents\GitHub\SigueLineas\SL.asm
+
+
