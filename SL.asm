@@ -27,7 +27,7 @@
                           
 ;------------------CONFIGURACION-----------
 INICIO:   BSF     STATUS,RP0
-          MOVLW   b'011100000'
+          MOVLW   b'11100000'
           MOVWF   TRISB
           CLRF    TRISA
           BCF     STATUS,RP0
@@ -39,28 +39,30 @@ INICIO:   BSF     STATUS,RP0
           MOVLW   .4
           MOVWF   contador
 
-          MOVLW   b'01110000' ;ADELANTE
+          MOVLW   b'10000000' ;ADELANTE
           MOVWF   aux5
 
-          MOVLW   b'01100000' ;DERECHA
+          MOVLW   b'00100000' ;DERECHA
           MOVWF   aux6
 
-          MOVLW   b'01000000' ;DERECHA
+          MOVLW   b'10100000' ;DERECHA
           MOVWF   aux7
 
-          MOVLW   b'01010000' ;ATRAS
+          MOVLW   b'00000000' ;ATRAS
           MOVWF   aux8
 
-          MOVLW   b'00010000' ;IZQ
+          MOVLW   b'01000000' ;IZQ
           MOVWF   aux9
 
-          MOVLW   b'00110000' ;IZQ
+          MOVLW   b'11000000' ;IZQ
           MOVWF   aux10
 
-          MOVLW   b'00000000' ;DER
+;	==CASOS ESPECIALES==
+
+          MOVLW   b'01100000' ;DER
           MOVWF   aux11
 
-          MOVLW   b'00100000' ;IZQ
+          MOVLW   b'11100000' ;IZQ
           MOVWF   aux12
 
 ;----------------INICIO DE DECISIONES------------
@@ -103,7 +105,7 @@ CICLO:    MOVF    PORTB,0
           MOVF    PORTB,0
           XORWF   aux12,0
           BTFSC   STATUS,2
-          GOTO    IZQUIERDA
+          GOTO    IZQUIERDA	;Tomar en cuenta el giro en la pista.
           GOTO    CICLO
 
 ;-------------MOVIMIENTOS--------------------
