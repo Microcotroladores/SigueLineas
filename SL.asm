@@ -18,7 +18,10 @@
           aux13
           aux14
           aux15
+			AUX16
+			AUX17
           contador
+		  MOV
           ENDC
 
           ORG    000H
@@ -64,6 +67,14 @@ INICIO:   BSF     STATUS,RP0
 
           MOVLW   b'01110000' ;IZQ
           MOVWF   aux12
+
+;	==VALORES DE MOV==
+
+          MOVLW   01H ;ULTIMO DERECHA
+          MOVWF   AUX16
+
+          MOVLW   02H ;ULTIMO IZQUIERDA
+          MOVWF   AUX17
 
 ;----------------INICIO DE DECISIONES------------
 
@@ -116,23 +127,52 @@ DERECHA:    MOVLW   b'00000110'
             MOVLW   00H
             MOVWF   PORTA
             CALL    PAUSA
+			CLRF	MOV
+			BSF		MOV,0
             GOTO    CICLO
 
 IZQUIERDA:  MOVLW   b'00001001'
             MOVWF   PORTA
             CALL    PAUSA
             MOVLW   00H
-            MOVWF   PORTB
+            MOVWF   PORTA
             CALL    PAUSA
+			CLRF	MOV
+			BSF		MOV,1
             GOTO    CICLO
 
 ADELANTE:   MOVLW   B'00000101'
             MOVWF   PORTA
             GOTO    CICLO
 
-ATRAS:      MOVLW   b'00001010'
+ATRAS:      MOVF	AUX16,0
+			XORWF	MOV,0
+			BTFSC	STATUS,2
+			GOTO	ATRI
+			MOVF	AUX17,0
+			XORWF	MOV,0
+			BTFSC	STATUS,2
+			GOTO	ATRD
+			GOTO	CICLO
+
+ATRD:		MOVLW   b'00001010'
             MOVWF   PORTA
+			CALL    PAUSA
+            MOVLW   b'00010001'
+            MOVWF   PORTA
+            CALL    PAUSA
+			;CALL	DERECHA
             GOTO    CICLO
+
+ATRI:		MOVLW   b'00001010'
+            MOVWF   PORTA
+			CALL    PAUSA
+            MOVLW   b'00010100'
+            MOVWF   PORTA
+            CALL    PAUSA
+			;CALL 	IZQUIERDA
+            GOTO    CICLO
+
 
 ;----------DELAY 1-----------------------------------------------
 
