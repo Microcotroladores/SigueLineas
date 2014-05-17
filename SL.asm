@@ -18,16 +18,14 @@
           aux13
           aux14
           aux15
-			AUX16
-			AUX17
+	  AUX16
+	  AUX17
           contador
-		  MOV
+	  MOV
           ENDC
 
           ORG    000H
-                          ;GOTO   INICIO
-                          ;ORG    005H
-                          
+                                 
 ;------------------CONFIGURACION-----------
 INICIO:   BSF     STATUS,RP0
           MOVLW   b'01110000'
@@ -127,54 +125,56 @@ DERECHA:    MOVLW   b'00000110'
             MOVLW   00H
             MOVWF   PORTA
             CALL    PAUSA
-			CLRF	MOV
-			BSF		MOV,0
+            CLRF    MOV
+            BSF	    MOV,0
             GOTO    CICLO
 
 IZQUIERDA:  MOVLW   b'00001001'
             MOVWF   PORTA
             CALL    PAUSA
             MOVLW   00H
-            MOVWF   PORTA
-            CALL    PAUSA
-			CLRF	MOV
-			BSF		MOV,1
-            GOTO    CICLO
+           	MOVWF   PORTA
+	        CALL    PAUSA
+            CLRF	MOV
+            BSF		MOV,1
+	        GOTO    CICLO
 
 ADELANTE:   MOVLW   B'00000101'
             MOVWF   PORTA
             GOTO    CICLO
 
-ATRAS:      MOVF	AUX16,0
-			XORWF	MOV,0
-			BTFSC	STATUS,2
-			GOTO	ATRI
-			MOVF	AUX17,0
-			XORWF	MOV,0
-			BTFSC	STATUS,2
-			GOTO	ATRD
-			GOTO	CICLO
+ATRAS:  MOVF	AUX16,0
+    	XORWF	MOV,0
+    	BTFSC	STATUS,2
+    	GOTO	ATRI
+    	MOVF	AUX17,0
+    	XORWF	MOV,0
+        BTFSC	STATUS,2
+        GOTO	ATRD
+        GOTO	CICLO
 
-ATRD:		MOVLW   b'00001010'
-            MOVWF   PORTA
-			CALL    PAUSA
-            MOVLW   b'00010001'
-            MOVWF   PORTA
-            CALL    PAUSA
-			;CALL	DERECHA
-            GOTO    CICLO
+ATRD:	MOVLW   b'00001010'
+        MOVWF   PORTA
+        CALL    PAUSA
+        ;MOVLW   b'00010001'
+    	MOVLw	10H
+        MOVWF   PORTA
+        CALL    PAUSA
+    	;CALL	DERECHA
+        GOTO    CICLO
 
-ATRI:		MOVLW   b'00001010'
-            MOVWF   PORTA
-			CALL    PAUSA
-            MOVLW   b'00010100'
-            MOVWF   PORTA
-            CALL    PAUSA
-			;CALL 	IZQUIERDA
-            GOTO    CICLO
+ATRI:	MOVLW   b'00001010'
+        MOVWF   PORTA
+    	CALL    PAUSA
+        ;MOVLW   b'00010100'
+        MOVLW   10H
+        MOVWF   PORTA
+        CALL    PAUSA
+        ;CALL 	IZQUIERDA
+        GOTO    CICLO
 
 
-;----------DELAY 1-----------------------------------------------
+;----------DELAY-----------------------------------------------
 
 PAUSA:      MOVLW   .1
             MOVWF   aux1
@@ -190,21 +190,6 @@ PAUSA:      MOVLW   .1
             GOTO    $-9
             RETURN
 
-;------------DELAY 2-----------------------------------------
-
-PAUSA2:     MOVLW   .1
-            MOVWF   aux13
-            MOVLW   .250
-            MOVWF   aux14
-            MOVLW   .120
-            MOVWF   aux15
-            GOTO    $-1
-            DECFSZ  aux14,F
-            GOTO    $-5
-            DECFSZ  aux13,F
-            GOTO    $-9
-            RETURN
-
-;---------------FIN----------------
+;---------------------FIN----------------
 
             END
